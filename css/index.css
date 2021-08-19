@@ -1,0 +1,867 @@
+/* reset css */
+*{
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+img{
+    vertical-align: middle;
+}
+ul{
+    list-style: none;
+}
+button{
+    border: none;
+}
+
+
+/* 通用背景class */
+.bg{
+    height: 883px;
+    background: url(../images/section2_bg1.jpg) no-repeat center top;
+    margin-top: -30px;
+    padding-top: 92px;
+    box-sizing: border-box;
+}
+.bg::after{
+    content: '';
+    width: 100%;
+    height: 30px;
+    background: url(../images/section2_bg2.png) no-repeat center top;
+
+    position: absolute;
+    bottom: 0;
+}
+
+/* 顶部header */
+header{
+    height: 40px;
+    background-color: #fff;
+    border-bottom: 1px solid #f5f5f5;
+}
+header .container{
+    width: 980px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+}
+header .left{
+    position: relative;
+}
+header .left span{
+    cursor: pointer;
+    margin-left: 20px;
+}
+header .left a{
+    position: relative;
+    z-index: 11;
+}
+header .left span a{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+
+    display: none;
+}
+header .left span:hover a{
+    display: block;
+}
+header .right{
+    position: relative;
+
+    display: flex;
+    justify-content: space-between;
+}
+header .right h3{
+    color: #464646; /* a标签不变色，继承问题 */
+    font-size: 14px;
+    line-height: 40px;
+    font-weight: normal;
+
+    position: relative; /* 放小图标用的 不加也行因为right加了*/
+}
+header .right h3 a{
+    color: #464646;
+}
+header .right h3 a:hover{
+    color: #f50;
+}
+header .right .text1{
+    padding-left: 30px;
+    margin-right: 20px;
+    cursor: pointer;
+}
+header .right .text1::before{
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: url(../images/ico_01.png) -30px 0;
+    
+    position: absolute;
+    top: 5px;
+    left: 0;
+}
+header .right .text2{
+    padding-right: 25px;
+    cursor: pointer;
+}
+header .right .text2::after{
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: url(../images/ico_01.png);
+
+    position: absolute;
+    top: 5px;
+    right: 3px;
+
+    transform: rotate(90deg);
+    opacity: 0.1;
+}
+header .right .text2:hover iframe{
+    display: block;
+}
+header .right .text2 iframe{
+    position: absolute;
+    top: 40px;
+    right: 0px;
+    z-index: 11;
+    display: none;
+}
+
+/* 导航栏nav */
+nav{
+    height: 131px;
+    background: url(../images/nav_bg.png) center no-repeat;
+    position: relative;
+    z-index: 9;
+}
+nav .container{
+    width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+}
+nav .title{
+    display: flex;  
+}
+nav .title a{
+    margin-top: 5px;
+    margin-right: 20px;
+}
+nav .title h1{
+    color: #ffb400;
+    font-size: 24px;
+    margin-top: 24px;
+
+    display: flex;
+    flex-direction: column;
+}
+nav .title h1 span{
+    color: #fff;
+    font-size: 14px;
+    font-weight: normal;
+}
+nav ul{
+    display: flex;
+}
+nav ul li a{
+    display: block;
+    width: 120px;
+    height: 100px;
+
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    line-height: 100px;
+}
+nav ul li a:hover{
+    color: #ffb400;
+    background: url(../images/navHover_bg.png) 0 -48px;
+}
+
+/* 第一部分 首屏 */
+#section1{
+    height: 920px;
+    background: url(../images/section1_bg2.jpg) center bottom no-repeat;
+    margin-top: -30px;
+
+    position: relative;
+    z-index: 8;
+}
+#section1 .container{
+    height: 890px;
+    background: url(../images/section1_bg1.jpg) center top no-repeat;
+
+    position: relative;
+}
+#section1 .btn{
+    width: 232px;
+    height: 78px;
+    background: url(../images/join_btn.png) no-repeat;
+
+    position: absolute;
+    top: 30px;
+    left: 70%;
+
+    text-indent: -999px;
+    overflow: hidden;
+}
+#section1 .box{
+    display: flex;
+    justify-content: center;
+
+    position: relative;
+    top: 654px;
+}
+#section1 .box .video{
+    width: 283px;
+    height: 163px;
+    background: url(../images/video-bg.png) no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#section1 .box .video::after{
+    content: '';
+    height: 61px;
+    width: 61px;
+    background: url(../images/play-btn.png) no-repeat;
+    cursor: pointer;
+
+    position: absolute;
+    /* left: 50%;
+    top: 50%;
+    margin: -30px 0 0 -30px; */
+    /* 不需要居中设置，video是一个弹性盒模型，里面的元素只有img和after 他俩两个轴都居中 */
+
+    animation: breathing 1s linear infinite alternate;
+}
+@keyframes breathing{
+    0%{
+        transform: scale(.9);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+#section1 .box .code{
+    width: 156px;
+    height: 156px;
+    margin: 0px 15px;
+}
+#section1 .box .down{
+    width: 229px;
+    height: 156px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* 弹出视频 */
+.dialog{
+    width: 1063px;
+    height: 608px;
+    padding: 9px 8px;
+    background: url(../images/dia-bg.png) no-repeat;
+    box-sizing: border-box;
+
+    /* 居中显示？ */
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    z-index: 20;
+
+    display: none;
+}
+.dialog .movie{
+    height: 590px;
+    overflow: hidden;
+}
+.dialog .closeBtn{
+    height: 75px;
+    width: 75px;
+    background: url(../images/dia-close.png) no-repeat;
+
+    position: absolute;
+    top: 7px;
+    right: -102px;
+
+    cursor: pointer;
+}
+.shadow{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, .7);
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 19;
+
+    display: none;
+}
+
+/* 第二部分 版本资讯 */
+#section2{
+    position: relative;
+    z-index: 7;
+}
+#section2 h2{
+    background: url(../images/section2_head.png) no-repeat center;
+    height: 76px;
+    text-indent: -999px;
+    overflow: hidden;
+}
+#section2 .container{
+    width: 1200px;
+    margin: 60px auto 0;
+}
+#section2 .tabList{
+    display: flex;
+    /* justify-content: center; */
+}
+#section2 .tabList li{
+    height: 100px;
+    width: 600px;
+    color: #ffb400;
+    font-size: 38px;
+    text-align: center;
+    line-height: 100px;
+    background: url(../images/css-sprites.png) no-repeat -20px -17px;
+    cursor: pointer;
+}
+#section2 .tabList li.active{
+    background-position: -20px -134px;
+    color: #fff;
+}
+#section2 .con{
+    height: 440px;
+    padding-top: 30px;
+    box-sizing: border-box;
+    background: url(../images/sec2-cont-bg.png) no-repeat;
+}
+#section2 .con>div{
+    display: none;
+}
+#section2 .con>div.active{
+    display: flex;
+}
+.subTab_1{
+    justify-content: space-between;
+}
+.subTab_1 ul li{
+    height: 100px;
+    width: 240px;
+    background: url(../images/css-sprites.png) no-repeat -268px -389px;
+    font-size: 26px;
+    color: #cbcbcb;
+    text-align: center;
+    line-height: 100px;
+    cursor: pointer;
+}
+.subTab_1 ul li.active,
+.subTab_1 ul li:hover{
+    color: #000;
+    background-position: -268px -509px;
+}
+.subTab_1>div>div{
+    display: none;
+}
+.subTab_1>div>div.active{
+    display: flex;
+}
+.subTab_1>div{
+    width: 900px;
+    padding: 64px 20px 0 0 ;
+}
+.subTab_1>div>div .text{
+    margin-left: 26px;
+}
+.subTab_1>div>div .text h3{
+    color: #ffbf05;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 auto 16px;
+}
+.subTab_1>div>div .text p{
+    font-size: 16px;
+    color: #e4e4e4;
+}
+.subTab_2{
+    padding: 40px 30px 0;
+    justify-content: space-between;
+    align-items: center;
+}
+.subTab_2 ul{
+    display: flex;
+    width: 570px;
+    height: 326px;
+    flex-wrap: wrap;
+    align-content: space-between;
+}
+.subTab_2 ul li{
+    width: 50%;
+    text-align: center;
+    background: url(../images/subTab_bg.png) no-repeat top center;
+    cursor: pointer;
+
+    position: relative;
+}
+.subTab_2 ul li p{
+    font-size: 16px;
+    color: #ffbf05;
+
+    position: absolute;
+    right: 18px;
+    bottom: 12px;
+}
+.subTab_2>div>div{
+    display: none;
+    position: relative;
+    width: 546px;
+    height: 317px;
+    background: url(../images/subTab_bg_big.png) no-repeat;
+}
+.subTab_2>div>div.active{
+    display: block;
+}
+.subTab_2>div>div p{
+    width: 100%;
+    height: 52px;
+    background: rgba(0, 0, 0, .6);
+
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    font-size: 20px;
+    color: #ffbf05;
+    line-height: 52px;
+    text-align: center;
+}
+
+/* 第三部分 新增玩法/模式 */
+#section3{
+    position: relative;
+    z-index: 6;
+    background-image: url(../images/section3_bg1.jpg);
+
+    height: 880px;
+}
+#section3.bg::after{
+    background-image: url(../images/section3_bg2.png);
+}
+#section3 h2{
+    background: url(../images/section3_head.png) no-repeat center;
+    height: 76px;
+    text-indent: -999px;
+    overflow: hidden;
+}
+#section3 .container{
+    width: 1400px;
+    margin: 90px auto 0;
+
+    position: relative;
+}
+.container .wrap{
+    width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.container .wrap ul{
+    display: flex;
+    width: 4800px;
+}
+.container .wrap ul li{
+    display: flex;
+}
+.container .wrap li img{
+    width: 600px;
+    height: 424px;
+}
+.container .wrap li .text{
+    width: 600px;
+    height: 424px;
+    background: rgba(0, 0, 0, .5);
+}
+.container .wrap li .text h3{
+    font-size: 26px;
+    color: #000;
+    font-weight: normal;
+    line-height: 62px;
+    text-align: center;
+    background: #ffbf05;
+}
+.container .wrap li .text p{
+    width: 540px;
+    height: 280px;
+    padding: 0 10px;
+    margin: 40px 0 auto;
+
+    font-size: 16px;
+    color: #e4e4e4;
+    line-height: 30px;
+}
+.container .btn button{
+    height: 115px;
+    width: 57px;
+    
+    position: absolute;
+    top: 50%;
+    margin-top: -58px;
+}
+button.prev{
+    left: 0;
+    background: url(../images/css-sprites.png) no-repeat -24px -255px;
+}
+button.prev:hover{
+    background-position: -99px -255px;
+}
+button.next{
+    right: 0;
+    background: url(../images/css-sprites.png) no-repeat -184px -255px;
+}
+button.next:hover{
+    background-position: -266px -255px;
+}
+.container .circle{
+    text-align: center;
+    margin-top: 90px;
+}
+.container .circle span{
+    display: inline-block;
+    height: 21px;
+    width: 21px;
+    border-radius: 50%;
+    background-color: #898179;
+    margin: 0 5px;
+    cursor: pointer;
+    opacity: .5;
+}
+.container .circle span.active{
+    background-color: #ffbf05;
+    opacity: 1;
+}
+
+/* 第四部分 新增场景 */
+#section4{
+    height: 880px;
+    background-image: url(../images/section4_big_01.png);
+
+    position: relative;
+    z-index: 5;
+}
+#section4 .bottom{
+    width: 100%;
+    height: 30px;
+    background: url(../images/section4_big_01_bottom.png) no-repeat center;
+
+    position: absolute;
+    bottom: 0;
+    z-index: 6;
+}
+#section4 h2{
+    height: 76px;
+    background: url(../images/section4_head.png) no-repeat center;
+    text-indent: -999px;
+    overflow: hidden;
+}
+#section4 .container ul{
+    width: 100%;
+
+    position: absolute;
+    bottom: 60px;
+
+    display: flex;
+    justify-content: center;
+}
+#section4 .container ul li{
+    width: 144px;
+    padding: 0 10px;
+}
+#section4 .container li img{
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+#section4 .container li img:hover{
+    border: 2px solid #ffb400;
+}
+#section4 .container li p{
+    font-size: 26px;
+    color: #c2c2c2;
+    text-align: center;
+    margin-top: 18px;
+    cursor: pointer;
+}
+#section4 .container li.active img{
+    border: 2px solid #ffb400;
+}
+#section4 .container li.active p{
+    color: #ffb400;
+}
+
+/* 第五部分 新增枪械/载具 */
+#section5{
+    height: 880px;
+    background-image: url(../images/section5_bg1.jpg);
+
+    position: relative;
+    z-index: 4;
+}
+#section5::after{
+    background-image: url(../images/section5_bg2.png);
+}
+#section5 h2{
+    background: url(../images/section5_head.png) no-repeat center;
+    height: 76px;
+    text-indent: -999px;
+    overflow: hidden;
+}
+#section5 .container{
+    width: 1400px;
+    margin: 90px auto 0;
+
+    position: relative;
+}
+
+/* 第六部分 新增内容 */
+#section6{
+    height: 880px;
+    background-image: url(../images/section6_bg1.jpg);
+
+    position: relative;
+    z-index: 3;
+}
+#section6::after{
+    background-image: url(../images/section6_bg2.png);
+}
+#section6 h2{
+    background: url(../images/section6_head.png) no-repeat center;
+    height: 76px;
+    text-indent: -999px;
+    overflow: hidden;
+}
+#section6 .container ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 88px;
+}
+#section6 ul li{
+    height: 440px;
+    width: 385px;
+    border: 2px solid #ffb400;
+    margin-right: 8px;
+    background-color: rgba(0, 0, 0, .5);
+}
+#section6 li img{
+    width: 385px;
+}
+#section6 li h3{
+    width: 197px;
+    height: 37px;
+    background: url(../images/css-sprites.png) no-repeat -423px -255px;
+    text-align: center;
+    line-height: 37px;
+    margin: 26px auto 19px;
+    font-size: 22px;
+    font-weight: normal;
+}
+#section6 li p{
+    width: 318px;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #e4e4e4;
+    text-align: left;
+}
+
+/* 第七部分 系统优化 */
+#section7{
+    height: 880px;
+    background-image: url(../images/section7_bg1.jpg);
+
+    position: relative;
+    z-index: 2;
+}
+#section7::after{
+    background-image: url(../images/section7_bg2.png);
+}
+#section7 h2{
+    height: 76px;
+    background: url(../images/section7_head.png) no-repeat center;
+    text-indent: -999px;
+    overflow: hidden;
+}
+#section7 .container ul{
+    display: flex;
+    margin-top: 80px;
+    justify-content: center;
+}
+#section7 ul li{
+    display: flex;
+    margin: 0 5px;
+}
+#section7 li h3{
+    height: 510px;
+    width: 92px;
+    font-weight: normal;
+    color: #bcbcbc;
+    background: url(../images/css-sprites.png) no-repeat -142px -389px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+#section7 li h3 p{
+    width: 32px;
+    font-size: 32px;
+    /* color: #bcbcbc; */
+}
+#section7 li div{
+    height: 510px;
+    background: url(../images/bg7-box.png) no-repeat top center/100% 100%;
+
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+
+    transition: .7s;
+}
+#section7 li div p{
+    width: 545px;
+    height: 510px;
+    padding: 30px 25px 0;
+    box-sizing: border-box;
+    font-size: 20px;
+    color: #c7c7c7;
+    line-height: 38px;
+}
+#section7 li.active h3{
+    color: #875d00;
+    background: url(../images/css-sprites.png) no-repeat -24px -389px;
+    margin-right: 10px;
+}
+#section7 li.active div{
+    width: 545px;
+    opacity: 1;
+}
+
+/* 第八部分 游戏特色 */
+#section8{
+    height: 880px;
+    background-image: url(../images/section8_bg1.jpg);
+
+    position: relative;
+    z-index: 1;
+}
+#section8::after{
+    background-image: url(../images/section8_bg2.jpg);
+}
+#section8 h2{
+    height: 76px;
+    background: url(../images/section8_head.png) no-repeat center;
+    text-indent: -999px;
+    overflow: hidden;
+}
+#section8 .container{
+    width: 1400px;
+    margin: 90px auto 0;
+
+    position: relative;
+}
+#section8 .wrap ul{
+    width: 1000px;
+    height: 498px;
+    margin: 0 auto;
+
+    position: relative;
+}
+#section8 .wrap ul li{
+    width: 858px;
+    height: 495px;
+
+    position: absolute;
+
+    transition: .3s;
+}
+#section8 .wrap ul li img{
+    width: 100%;
+    height: 100%;
+}
+#section8 li:nth-child(1){
+    left: 0;
+    z-index: 2;
+
+    opacity: .5;
+    transform: scale(.8);
+    transform-origin: left;
+}
+#section8 li:nth-child(2){
+    /* left: 73px; */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+#section8 li:nth-child(3){
+    right: 0;
+    z-index: 2;
+
+    opacity: .5;
+    transform: scale(.8);
+    transform-origin: right;
+}
+#section8 li:nth-child(n+4){
+    /* 从第4张开始到结尾的所有图 */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    display: none;
+}
+#section8 .circle{
+    margin-top: 50px;
+}
+
+/* 底部 */
+footer{
+    background-color: #000;
+    margin-top: -30px;
+
+    font-size: 12px;
+    line-height: 20px;
+    color: #fff;
+}
+footer .container{
+    height: 240px;
+    width: 1200px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer .footLeft img{
+    padding-right: 10px;
+}
+footer .footLeft ul{
+    display: flex;
+    width: 320px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+footer .footLeft ul li{
+    padding: 0 3px;
+}
+footer .footRight p a{
+    color: #fff;
+}
